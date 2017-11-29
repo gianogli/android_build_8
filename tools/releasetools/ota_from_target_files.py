@@ -915,8 +915,6 @@ endif;
   metadata["ota-required-cache"] = str(script.required_cache)
   WriteMetadata(metadata, output_zip)
 
-  common.ZipWriteStr(output_zip, "system/build.prop",
-                     ""+input_zip.read("SYSTEM/build.prop"))
   common.ZipWriteStr(output_zip, "META-INF/org/lineageos/releasekey",
                      ""+input_zip.read("META/releasekey.txt"))
 
@@ -1299,8 +1297,6 @@ endif;
   metadata["ota-required-cache"] = str(script.required_cache)
   WriteMetadata(metadata, output_zip)
 
-  common.ZipWriteStr(output_zip, "system/build.prop",
-                     ""+target_zip.read("SYSTEM/build.prop"))
 
 def WriteVerifyPackage(input_zip, output_zip):
   script = edify_generator.EdifyGenerator(3, OPTIONS.info_dict)
