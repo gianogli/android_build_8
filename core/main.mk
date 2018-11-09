@@ -313,6 +313,7 @@ ADDITIONAL_BUILD_PROPERTIES += dalvik.vm.stack-trace-dir=/data/anr
 
 # ------------------------------------------------------------
 # Include vendor specific additions to build properties
+-include vendor/lineage/config/main.mk
 -include vendor/lineage/build/core/main.mk
 
 # ------------------------------------------------------------
