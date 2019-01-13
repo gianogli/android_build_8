@@ -25,7 +25,9 @@ print_build_config_vars := \
   HOST_BUILD_TYPE \
   BUILD_ID \
   OUT_DIR \
-  AUX_OS_VARIANT_LIST
+  AUX_OS_VARIANT_LIST \
+  BUILD_KEYS \
+  DEFAULT_SYSTEM_DEV_CERTIFICATE
 
 ifeq ($(SDCLANG),true)
 print_build_config_vars += \
