@@ -823,7 +823,9 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   else:
     script.FormatPartition("/system")
     script.Mount("/system", recovery_mount_options)
-    script.UnpackPackageDir("system", "/system")
+    if not has_recovery_patch:
+      script.UnpackPackageDir("recovery", "/system")
+      script.UnpackPackageDir("system", "/system")
 
     symlinks = CopyPartitionFiles(system_items, input_zip, output_zip)
     script.MakeSymlinks(symlinks)
